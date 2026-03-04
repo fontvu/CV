@@ -1,0 +1,273 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1.5 cm,
+    bottom=1.5 cm,
+    left=1.8 cm,
+    right=1.8 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{25, 25, 112}
+\definecolor{accentColor}{RGB}{70, 130, 180}
+\definecolor{textColor}{RGB}{51, 51, 51}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Phong Vu's CV},
+    pdfauthor={Phong Vu},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{charter}
+
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\color{primaryColor}\bfseries\Large}{}{0pt}{}[\vspace{2pt}\color{accentColor}\rule{\textwidth}{1.2pt}]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+}
+
+\renewcommand\labelitemi{\color{accentColor}$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.08 cm,
+        parsep=0.08 cm,
+        partopsep=0pt,
+        itemsep=0.05 cm,
+        leftmargin=0 cm + 12pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.8 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \color{primaryColor}\small\secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.3}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+
+\newcommand{\AND}{\unskip
+    \cleaders\copy\ANDbox\hskip\wd\ANDbox
+    \ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{$|$}
+
+\begin{document}
+
+    \begin{header}
+        \fontsize{22 pt}{22 pt}\selectfont \color{primaryColor}\textbf{Phong Vu}
+
+        \vspace{6 pt}
+
+        \normalsize\color{textColor}
+        \mbox{\faMapMarker*\ Ho Chi Minh City, Vietnam}%
+        \kern 8.0 pt%
+        \AND%
+        \kern 8.0 pt%
+        \mbox{\faPhone*\ +84905060593}%
+        \kern 8.0 pt%
+        \AND%
+        \kern 8.0 pt%
+        \mbox{\faEnvelope\ \hrefWithoutArrow{mailto:mail@itsfontvu.de}{mail@itsfontvu.de}}%
+        \kern 8.0 pt%
+        \AND%
+        \kern 8.0 pt%
+        \mbox{\faLinkedin\ \hrefWithoutArrow{https://linkedin.com/in/fontvu}{fontvu}}%
+        \kern 8.0 pt%
+        \AND%
+        \kern 8.0 pt%
+        \mbox{\faGithub\ \hrefWithoutArrow{https://github.com/fontvu}{fontvu}}%
+    \end{header}
+
+    \vspace{8 pt}
+
+    \section{Summary}
+
+    \begin{onecolentry}
+        \color{textColor}IT Security Engineer with over 6 years of experience in incident response, digital forensics, security monitoring, and risk \& compliance management within highly regulated financial environments. Proven ability to investigate fraud and abuse cases, conduct time-series log analysis, and lead security incident remediation efforts in coordination with CSIRT and regional governance teams. Skilled in scripting (Python, PowerShell, Bash) to automate threat detection and monitoring workflows, with deep familiarity with ISMS practices, ISO/IEC 27001, and NIST Cybersecurity Framework. Experienced communicating and collaborating across multi-country, cross-functional teams in English.
+    \end{onecolentry}
+
+    \vspace{0.15 cm}
+
+    \section{Experience}
+
+    \begin{twocolentry}{
+        May 2024 - Present
+    }
+        \textbf{\color{primaryColor}IT Security Engineer}
+
+        \textit{Prudential Vietnam Assurance Private Ltd.} $\cdot$ Ho Chi Minh City, Vietnam
+
+        \begin{highlights}
+            \item Investigate security incidents and abuse/fraud cases by performing digital forensics and log analysis across identity infrastructure, correlating time-series event data to assess scope, impact, and root cause.
+            \item Assess potential compromise scenarios and threat actor activity using SIEM telemetry; develop and communicate risk impact assessments to senior stakeholders and regional security governance teams.
+            \item Develop, implement, and maintain security policies and procedures covering identity lifecycle, access governance, and incident response aligned with ISO/IEC 27001 and organizational ISMS requirements.
+            \item Conduct risk assessments to identify vulnerabilities across identity and infrastructure systems; define risk treatment strategies and track remediation progress against SLAs.
+            \item Build Python and PowerShell automation to operationalize security monitoring, aggregate vulnerability and log data, and generate compliance reporting for management and Group security governance.
+            \item Drive zero-day exposure monitoring and coordinate vulnerability remediation across teams, ensuring compliance with Group IT security standards and regulatory obligations.
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.15 cm}
+
+    \begin{twocolentry}{
+        Jan 2021 - Oct 2021
+    }
+        \textbf{\color{primaryColor}IT Security Specialist}
+
+        \textit{AIA Vietnam} $\cdot$ Ho Chi Minh City, Vietnam
+
+        \begin{highlights}
+            \item Led and coordinated incident response activities, working with internal IT, legal, and AIA Group CSIRT to investigate, contain, and remediate security events in line with business continuity requirements.
+            \item Developed and delivered security awareness training programs for staff, covering phishing, data handling, and insider threat topics to reduce organizational risk exposure.
+            \item Oversaw security projects and provided expert guidance to ensure new technology deployments complied with AIA Group standards.
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.15 cm}
+
+    \begin{twocolentry}{
+        Apr 2020 - Jan 2021
+    }
+        \textbf{\color{primaryColor}Technology Governance Assistant Manager}
+
+        \textit{CIMB Bank Vietnam} $\cdot$ Ho Chi Minh City, Vietnam
+
+        \begin{highlights}
+            \item Conducted security and compliance reviews for technology projects, assessing risks and ensuring systems met internal governance standards and regulatory requirements prior to deployment.
+            \item Monitored and managed operational risk events within CIMB's risk management system, maintaining accurate records and reporting to senior management.
+            \item Identified and implemented process improvements for technology risk and compliance procedures, increasing operational efficiency and reducing audit findings.
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.15 cm}
+
+    \begin{twocolentry}{
+        Nov 2019 - Apr 2020
+    }
+        \textbf{\color{primaryColor}Information Assurance Specialist}
+
+        \textit{Tenpoint7} $\cdot$ Ho Chi Minh City, Vietnam
+
+        \begin{highlights}
+            \item Monitored security controls to verify continuous compliance, detecting and escalating control failures for remediation.
+            \item Implemented automated logging, alerting, and compliance reporting using scripting tools, reducing manual effort and improving detection latency for control exceptions.
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.15 cm}
+
+    \begin{twocolentry}{
+        Jan 2018 - Nov 2019
+    }
+        \textbf{\color{primaryColor}IT Risk Assurance Associate}
+
+        \textit{PwC Vietnam} $\cdot$ Ho Chi Minh City, Vietnam
+
+        \begin{highlights}
+            \item Performed IT General Controls (ITGC) audits and security risk assessments for financial services clients including AIA, HSBC, VP Bank Finance, and Ho Chi Minh City Securities, covering access management, change management, and operations controls.
+            \item Conducted system security configuration reviews and supported cybersecurity engagements across ERP and core banking platforms.
+            \item Led PwC Vietnam's first AICPA SOC 2 examination for a SaaS client, documenting controls against security, availability, and confidentiality trust service criteria.
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.15 cm}
+
+    \section{Education}
+
+    \begin{twocolentry}{
+        2021 - 2023
+    }
+        \textbf{\color{primaryColor}Master of Science, Cybersecurity}
+
+        \textit{Brandenburgische Technische Universität Cottbus-Senftenberg} $\cdot$ Cottbus, Germany
+    \end{twocolentry}
+
+    \vspace{0.15 cm}
+
+    \begin{twocolentry}{
+        2013 - 2017
+    }
+        \textbf{\color{primaryColor}Bachelor of Computer and Information Science}
+
+        \textit{Auckland University of Technology} $\cdot$ Ho Chi Minh City, Vietnam
+
+        \begin{highlights}
+            \item Joint program between the Vietnam National University of Science in Ho Chi Minh City (HCMUS) and Auckland University of Technology (AUT)
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.15 cm}
+
+    \section{Skills}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Incident Response \& Forensics:} Digital Forensics, Fraud \& Abuse Investigation, Incident Response Planning, CSIRT Coordination, Threat Impact Assessment, IOC Analysis
+            \item \textbf{Security Monitoring \& Log Analysis:} SIEM (log ingestion \& correlation), Windows Log Analysis
+            \item \textbf{Risk \& Compliance:} ISO/IEC 27001, NIST Cybersecurity Framework, ISMS, Security Risk Assessment, IT Audit (ITGC), SOC 2, PDPA / Data Privacy
+            \item \textbf{Security Policy \& Governance:} Policy Development, Security Awareness Training, Business Continuity, Regulatory Compliance Reporting
+            \item \textbf{Security Domains:} Vulnerability Management, IAM, Privileged Access Management, DevSecOps, Data Loss Prevention
+            \item \textbf{Security Solutions:} CrowdStrike, Qualys, CyberArk, SailPoint IdentityIQ, Checkmarx, Forcepoint, Forescout, Okta
+            \item \textbf{Programming \& Scripting:} Python, PowerShell, Bash, SQL
+            \item \textbf{Cloud Platforms:} Azure, AWS
+            \item \textbf{DevOps \& Tooling:} Docker, Terraform, GitHub Actions
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.15 cm}
+
+\end{document}
